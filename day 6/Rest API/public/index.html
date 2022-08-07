@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Slavian</title>
+        <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+        <link href="./styles.css" rel="stylesheet" />
+    </head>
+    <body>
+
+        <h1 class="title">Slavian - a Slav REST API</h1>
+        <div id="homepage">
+            <h1>Hire a slav in your area!</h1>
+            <div id="slavs"></div>
+        </div>
+
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script src="https://unpkg.com/react@15/dist/react.js"></script>
+        <script src="https://unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+
+        <!-- Create React Component -->
+        <script type="text/babel">
+            
+            class Slavs extends React.Component{
+     
+            render(){
+                
+
+                return(
+                    <div id="slav-container">
+                        <form id="search" onSubmit={this.handleSubmit}>
+                            <label>Enter your Latitude:</label>
+                            <input type="text" ref="lat" placeholder="latitude" required />
+                            <label>Enter your Longitude:</label>
+                            <input type="text" ref="lng" placeholder="longitude" required />
+                            <input type="submit" value="Find Slavs" />
+                        </form>
+                        <ul></ul>
+                    </div>
+                );
+            }
+            
+        };
+        ReactDOM.render(<Slavs />, document.getElementById('slavs'));
+        </script>
+
+
+    </body>
+</html>
